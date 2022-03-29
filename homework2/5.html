@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+ /** Функция складывает два числа, переданных в функцию.
+   * @param {number}  a - первое число.
+   * @param {number}  b - второе число.
+   * @returns {number} Сумма чисел.
+   */
+   function add(a, b){
+    return a + b;
+  }
+  console.log(add(8, 4));
+
+  /** Функция из большего числа ,переданного в функцию, вычитает меньшее число,
+   * переданное в функцию.
+   * @param {number}  a - первое число.
+   * @param {number}  b - второе число.
+   * @returns {number} Разница чисел.
+   */
+  function subtract(a, b){
+    if (a > b){
+    return a - b;
+    } else{
+    return b - a;
+    } 
+  }
+  console.log(subtract(8, 4));
+
+  /** Функция умножает два числа, переданных в функцию.
+   * @param {number}  a - первое число.
+   * @param {number}  b - второе число.
+   * @returns {number} Произведение чисел.
+   */
+  function multiply(a, b){
+    return a * b;
+  }
+  console.log(multiply(8, 4));
+
+  /** Функция делит первое число, переданное в функцию, на второе.
+   * @param {number}  a - первое число.
+   * @param {number}  b - второе число.
+   * @returns {number} Частное чисел.
+   */
+  function divide(a, b){
+    return a / b;
+  }
+  console.log(divide(8, 4));
+
+  /** Функция возвращает результат операции для двух первых аргументов 
+   "arg1", "arg2" ,а операция определяется третьим аргументом "operation".
+   * @param {number}  arg1 - первое число.
+   * @param {number}  arg2 - второе число.
+   * @param {string}  operation - знак математической операции.
+   * @returns {number} Сумма чисел
+   * @returns {number} Разница чисел.
+   * @returns {number} Произведение чисел.
+   * @returns {number} Частное чисел.
+   * @returns {number} Nan, передан некорректный аргумент в 
+     параметр "operation".
+   */
+  function mathOperation(arg1, arg2, operation){
+    if (operation == "+"){
+      return add(arg1, arg2);
+    }else if (operation == "-"){
+      return subtract(arg1, arg2);
+    }else if (operation == "*"){
+      return multiply(arg1, arg2);
+    }else if (operation == "/"){
+      return divide(arg1, arg2);
+    }else{
+      return NaN;
+    }
+  }
+
+  console.log(mathOperation(8, 4, "+"));
+  console.log(mathOperation(8, 4, "-"));
+  console.log(mathOperation(8, 4, "*"));
+  console.log(mathOperation(8, 4, "/")); 
+  console.log(mathOperation(8, 4, "||")); 
+
+</script>
+</body>
+</html>
